@@ -39,7 +39,9 @@ for line in tsi_src:
 		except IndexError:
 			break
 
-	if moe_word == word:
+	if len(moe_word) == 1:
+		continue
+	elif moe_word == word:
 		moe_zhu_yin = u' '.join(moe_split[1:]).rstrip()
 		if moe_zhu_yin != zhu_yin:
 			print u'{} [{}] [{}]'.format(word, zhu_yin, moe_zhu_yin)
